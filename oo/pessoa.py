@@ -5,11 +5,11 @@ class Pessoa:
         self.filhos = list(filhos)
 
     def cumprimentar(self):
-        return f'Olá {id(self)}'
+        return f'Olá! {id(self)}'
 
 if __name__ == '__main__':
-    edson = Pessoa(nome='Edson')
-    eddy = Pessoa(edson, nome='Eddy')
+    david = Pessoa(nome='David')
+    eddy = Pessoa(david, nome='Eddy')
     print(Pessoa.cumprimentar(eddy))
     print(id(eddy))
     print(eddy.cumprimentar())
@@ -17,3 +17,7 @@ if __name__ == '__main__':
     print(eddy.idade)
     for filho in eddy.filhos:
         print(filho.nome)
+    eddy.sobrenome = 'Alves'
+    del eddy.filhos
+    print(eddy.__dict__)
+    print(david.__dict__)

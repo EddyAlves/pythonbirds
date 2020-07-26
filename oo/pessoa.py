@@ -20,6 +20,9 @@ class Pessoa:
 class Homem(Pessoa):
     pass
 
+class Multante(Pessoa):
+    olhos = 3
+
 if __name__ == '__main__':
     david = Homem(nome='David')
     eddy = Homem(david, nome='Eddy')
@@ -36,7 +39,6 @@ if __name__ == '__main__':
     del eddy.olhos
     print(eddy.__dict__)
     print(david.__dict__)
-    Pessoa.olhos = 3
     print(Pessoa.olhos)
     print(eddy.olhos)
     print(david.olhos)
@@ -48,3 +50,4 @@ if __name__ == '__main__':
     print(isinstance(pessoa, Homem))
     print(isinstance(eddy, Pessoa))
     print(isinstance(eddy, Homem))
+    print(eddy.olhos)
